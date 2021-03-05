@@ -18,7 +18,7 @@ class ImageTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchImages(searchText: "Blue")
+        fetchImages(searchText: "Red")
     }
     
     // MARK: - Helpers
@@ -26,14 +26,17 @@ class ImageTableViewController: UITableViewController {
     private func fetchImages(searchText: String) {
         self.networkDataFetcher.fetchImages(searchTerm: searchText) { [weak self] (searchResults) in
             guard let fetchedImages = searchResults else { return }
-            //self?.spinner.stopAnimating()
             self?.images = fetchedImages.results
             self?.tableView.reloadData()
         }
     }
 
-    // MARK: - Table view data source
+}
 
+// MARK: - Table view data source
+
+extension ImageTableViewController {
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return images.count
     }
@@ -45,8 +48,16 @@ class ImageTableViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return height(for: indexPath)
     }
-
+    
+    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return height(for: indexPath)
+    }
+    
+    private func height(for indexPath: IndexPath) -> CGFloat {
+        return 250
+    }
+    
 }
