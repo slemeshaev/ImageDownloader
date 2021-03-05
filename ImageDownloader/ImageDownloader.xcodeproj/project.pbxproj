@@ -13,6 +13,12 @@
 		669105AD25F25CED00AEF065 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 669105AC25F25CED00AEF065 /* Assets.xcassets */; };
 		669105B025F25CED00AEF065 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 669105AE25F25CED00AEF065 /* LaunchScreen.storyboard */; };
 		669105C025F25E3400AEF065 /* ImageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669105BF25F25E3400AEF065 /* ImageTableViewController.swift */; };
+		669105CC25F2654F00AEF065 /* SearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669105CB25F2654F00AEF065 /* SearchResults.swift */; };
+		669105CF25F2658500AEF065 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669105CE25F2658500AEF065 /* NetworkService.swift */; };
+		669105D225F265A900AEF065 /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669105D125F265A900AEF065 /* NetworkDataFetcher.swift */; };
+		669105D525F265C900AEF065 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669105D425F265C800AEF065 /* API.swift */; };
+		669105D925F268E700AEF065 /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669105D825F268E700AEF065 /* ImageTableViewCell.swift */; };
+		669105DD25F26E0500AEF065 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669105DC25F26E0500AEF065 /* UIImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +30,12 @@
 		669105AF25F25CED00AEF065 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		669105B125F25CED00AEF065 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		669105BF25F25E3400AEF065 /* ImageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTableViewController.swift; sourceTree = "<group>"; };
+		669105CB25F2654F00AEF065 /* SearchResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResults.swift; sourceTree = "<group>"; };
+		669105CE25F2658500AEF065 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		669105D125F265A900AEF065 /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
+		669105D425F265C800AEF065 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		669105D825F268E700AEF065 /* ImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
+		669105DC25F26E0500AEF065 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +73,7 @@
 				669105C425F2605D00AEF065 /* Controller */,
 				669105C625F2607800AEF065 /* Service */,
 				669105C525F2606500AEF065 /* Helpers */,
+				669105DB25F26DC000AEF065 /* Extension */,
 			);
 			path = ImageDownloader;
 			sourceTree = "<group>";
@@ -68,6 +81,7 @@
 		669105C225F2605000AEF065 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				669105CB25F2654F00AEF065 /* SearchResults.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -75,8 +89,9 @@
 		669105C325F2605700AEF065 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				669105A925F25CEB00AEF065 /* Main.storyboard */,
 				669105AE25F25CED00AEF065 /* LaunchScreen.storyboard */,
+				669105A925F25CEB00AEF065 /* Main.storyboard */,
+				669105D725F268C100AEF065 /* Cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -103,8 +118,27 @@
 		669105C625F2607800AEF065 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				669105CE25F2658500AEF065 /* NetworkService.swift */,
+				669105D125F265A900AEF065 /* NetworkDataFetcher.swift */,
+				669105D425F265C800AEF065 /* API.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		669105D725F268C100AEF065 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				669105D825F268E700AEF065 /* ImageTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		669105DB25F26DC000AEF065 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				669105DC25F26E0500AEF065 /* UIImageView.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,9 +211,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				669105D225F265A900AEF065 /* NetworkDataFetcher.swift in Sources */,
+				669105DD25F26E0500AEF065 /* UIImageView.swift in Sources */,
+				669105D925F268E700AEF065 /* ImageTableViewCell.swift in Sources */,
+				669105CF25F2658500AEF065 /* NetworkService.swift in Sources */,
 				669105A425F25CEB00AEF065 /* AppDelegate.swift in Sources */,
 				669105C025F25E3400AEF065 /* ImageTableViewController.swift in Sources */,
+				669105CC25F2654F00AEF065 /* SearchResults.swift in Sources */,
 				669105A625F25CEB00AEF065 /* SceneDelegate.swift in Sources */,
+				669105D525F265C900AEF065 /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

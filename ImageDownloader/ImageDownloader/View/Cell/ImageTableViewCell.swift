@@ -8,16 +8,35 @@
 import UIKit
 
 class ImageTableViewCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    
+    // MARK: - Properties
+    
+    @IBOutlet weak var photoView: UIImageView!
+    
+    var unsplashPhoto: UnsplashPhoto! {
+        didSet {
+            let imageUrl = unsplashPhoto.urls["regular"]
+            guard let url = imageUrl else { return }
+            photoView.loadImage(with: url)
+        }
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    // MARK: - Lifecycle
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.photoView.image = nil
     }
+    
+    // MARK: - Helpers
+    
+//    func downloadImage(withURL url: URL, forCell cell: UITableViewCell) {
+//        //
+//    }
+    
+//    func configure(logo: UIImage, city: String) {
+//        self.photoView.image = logo
+//    }
+//
 
 }

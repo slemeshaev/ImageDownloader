@@ -17,19 +17,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="191" id="nAB-i8-Jd3">
-                                <rect key="frame" x="0.0" y="28" width="414" height="191"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="190" id="nAB-i8-Jd3" customClass="ImageTableViewCell" customModule="ImageDownloader" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="190"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nAB-i8-Jd3" id="1cL-iN-RPd">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="191"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="190"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WvE-zV-G0c">
-                                            <rect key="frame" x="20" y="11" width="374" height="169"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Loading" translatesAutoresizingMaskIntoConstraints="NO" id="WvE-zV-G0c">
+                                            <rect key="frame" x="20" y="5" width="374" height="180"/>
                                         </imageView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="WvE-zV-G0c" firstAttribute="top" secondItem="1cL-iN-RPd" secondAttribute="top" constant="5" id="B8C-BP-wLD"/>
+                                        <constraint firstAttribute="trailing" secondItem="WvE-zV-G0c" secondAttribute="trailing" constant="20" symbolic="YES" id="OZ6-NY-Kpc"/>
+                                        <constraint firstItem="WvE-zV-G0c" firstAttribute="leading" secondItem="1cL-iN-RPd" secondAttribute="leading" constant="20" symbolic="YES" id="pbg-Gi-feJ"/>
+                                        <constraint firstAttribute="bottom" secondItem="WvE-zV-G0c" secondAttribute="bottom" constant="5" id="uwV-zi-Uxt"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="photoView" destination="WvE-zV-G0c" id="s6E-Qt-LIW"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -63,6 +71,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Loading" width="512" height="512"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

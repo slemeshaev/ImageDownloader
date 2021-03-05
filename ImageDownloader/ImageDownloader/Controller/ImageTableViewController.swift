@@ -11,22 +11,42 @@ class ImageTableViewController: UITableViewController {
 
     // MARK: - Properties
     
+    private var images = [UnsplashPhoto]()
+    private var networkDataFetcher = NetworkDataFetcher()
+    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchImages(searchText: "Blue")
+    }
+    
+    // MARK: - Helpers
+    
+    private func fetchImages(searchText: String) {
+        self.networkDataFetcher.fetchImages(searchTerm: searchText) { [weak self] (searchResults) in
+            guard let fetchedImages = searchResults else { return }
+            //self?.spinner.stopAnimating()
+            self?.images = fetchedImages.results
+            self?.tableView.reloadData()
+        }
     }
 
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return images.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.backgroundColor = .blue
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? ImageTableViewCell else { return UITableViewCell() }
+        let unsplashPhoto = images[indexPath.row]
+        cell.unsplashPhoto = unsplashPhoto
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
 
 }
