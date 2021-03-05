@@ -56,15 +56,55 @@
 		669105A225F25CEB00AEF065 /* ImageDownloader */ = {
 			isa = PBXGroup;
 			children = (
-				669105A325F25CEB00AEF065 /* AppDelegate.swift */,
-				669105A525F25CEB00AEF065 /* SceneDelegate.swift */,
-				669105A925F25CEB00AEF065 /* Main.storyboard */,
-				669105BF25F25E3400AEF065 /* ImageTableViewController.swift */,
-				669105AC25F25CED00AEF065 /* Assets.xcassets */,
-				669105AE25F25CED00AEF065 /* LaunchScreen.storyboard */,
-				669105B125F25CED00AEF065 /* Info.plist */,
+				669105C225F2605000AEF065 /* Model */,
+				669105C325F2605700AEF065 /* View */,
+				669105C425F2605D00AEF065 /* Controller */,
+				669105C625F2607800AEF065 /* Service */,
+				669105C525F2606500AEF065 /* Helpers */,
 			);
 			path = ImageDownloader;
+			sourceTree = "<group>";
+		};
+		669105C225F2605000AEF065 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		669105C325F2605700AEF065 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				669105A925F25CEB00AEF065 /* Main.storyboard */,
+				669105AE25F25CED00AEF065 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		669105C425F2605D00AEF065 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				669105BF25F25E3400AEF065 /* ImageTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		669105C525F2606500AEF065 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				669105A325F25CEB00AEF065 /* AppDelegate.swift */,
+				669105A525F25CEB00AEF065 /* SceneDelegate.swift */,
+				669105AC25F25CED00AEF065 /* Assets.xcassets */,
+				669105B125F25CED00AEF065 /* Info.plist */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		669105C625F2607800AEF065 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,7 +256,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -271,7 +311,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -288,7 +328,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5GWB2H668N;
-				INFOPLIST_FILE = ImageDownloader/Info.plist;
+				INFOPLIST_FILE = ImageDownloader/Helpers/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -308,7 +348,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5GWB2H668N;
-				INFOPLIST_FILE = ImageDownloader/Info.plist;
+				INFOPLIST_FILE = ImageDownloader/Helpers/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
