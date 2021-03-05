@@ -9,21 +9,21 @@
 /* Begin PBXBuildFile section */
 		669105A425F25CEB00AEF065 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669105A325F25CEB00AEF065 /* AppDelegate.swift */; };
 		669105A625F25CEB00AEF065 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669105A525F25CEB00AEF065 /* SceneDelegate.swift */; };
-		669105A825F25CEB00AEF065 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669105A725F25CEB00AEF065 /* ViewController.swift */; };
 		669105AB25F25CEB00AEF065 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 669105A925F25CEB00AEF065 /* Main.storyboard */; };
 		669105AD25F25CED00AEF065 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 669105AC25F25CED00AEF065 /* Assets.xcassets */; };
 		669105B025F25CED00AEF065 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 669105AE25F25CED00AEF065 /* LaunchScreen.storyboard */; };
+		669105C025F25E3400AEF065 /* ImageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669105BF25F25E3400AEF065 /* ImageTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		669105A025F25CEB00AEF065 /* ImageDownloader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageDownloader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		669105A325F25CEB00AEF065 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		669105A525F25CEB00AEF065 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		669105A725F25CEB00AEF065 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		669105AA25F25CEB00AEF065 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		669105AC25F25CED00AEF065 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		669105AF25F25CED00AEF065 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		669105B125F25CED00AEF065 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		669105BF25F25E3400AEF065 /* ImageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +58,8 @@
 			children = (
 				669105A325F25CEB00AEF065 /* AppDelegate.swift */,
 				669105A525F25CEB00AEF065 /* SceneDelegate.swift */,
-				669105A725F25CEB00AEF065 /* ViewController.swift */,
 				669105A925F25CEB00AEF065 /* Main.storyboard */,
+				669105BF25F25E3400AEF065 /* ImageTableViewController.swift */,
 				669105AC25F25CED00AEF065 /* Assets.xcassets */,
 				669105AE25F25CED00AEF065 /* LaunchScreen.storyboard */,
 				669105B125F25CED00AEF065 /* Info.plist */,
@@ -137,8 +137,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				669105A825F25CEB00AEF065 /* ViewController.swift in Sources */,
 				669105A425F25CEB00AEF065 /* AppDelegate.swift in Sources */,
+				669105C025F25E3400AEF065 /* ImageTableViewController.swift in Sources */,
 				669105A625F25CEB00AEF065 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -289,6 +289,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5GWB2H668N;
 				INFOPLIST_FILE = ImageDownloader/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -296,7 +297,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ru.zamprog.ImageDownloader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -308,6 +309,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5GWB2H668N;
 				INFOPLIST_FILE = ImageDownloader/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -315,7 +317,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ru.zamprog.ImageDownloader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
