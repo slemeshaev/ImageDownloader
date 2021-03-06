@@ -27,9 +27,14 @@
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WvE-zV-G0c">
                                             <rect key="frame" x="20" y="5" width="374" height="190"/>
                                         </imageView>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="BD9-Gx-JIq">
+                                            <rect key="frame" x="197" y="90" width="20" height="20"/>
+                                        </activityIndicatorView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="BD9-Gx-JIq" firstAttribute="centerY" secondItem="1cL-iN-RPd" secondAttribute="centerY" id="0B5-Iz-Xng"/>
                                         <constraint firstItem="WvE-zV-G0c" firstAttribute="top" secondItem="1cL-iN-RPd" secondAttribute="top" constant="5" id="B8C-BP-wLD"/>
+                                        <constraint firstItem="BD9-Gx-JIq" firstAttribute="centerX" secondItem="1cL-iN-RPd" secondAttribute="centerX" id="MdG-XC-Wk6"/>
                                         <constraint firstAttribute="trailing" secondItem="WvE-zV-G0c" secondAttribute="trailing" constant="20" symbolic="YES" id="OZ6-NY-Kpc"/>
                                         <constraint firstItem="WvE-zV-G0c" firstAttribute="leading" secondItem="1cL-iN-RPd" secondAttribute="leading" constant="20" symbolic="YES" id="pbg-Gi-feJ"/>
                                         <constraint firstAttribute="bottom" secondItem="WvE-zV-G0c" secondAttribute="bottom" constant="5" id="uwV-zi-Uxt"/>
@@ -37,6 +42,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="photoView" destination="WvE-zV-G0c" id="s6E-Qt-LIW"/>
+                                    <outlet property="spinner" destination="BD9-Gx-JIq" id="EmB-IM-sQo"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

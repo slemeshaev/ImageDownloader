@@ -9,8 +9,8 @@ import UIKit
 
 final class NetworkService {
     
-    func request(searchTerm: String, completion: @escaping (Data?, Error?) -> Void) {
-        let parameters = self.prepareParameters(searchTerm: searchTerm)
+    func request(searchTerm: String, n: Int, completion: @escaping (Data?, Error?) -> Void) {
+        let parameters = self.prepareParameters(searchTerm: searchTerm, n: n)
         let url = self.url(params: parameters)
         var request = URLRequest(url: url)
         request.allHTTPHeaderFields = prepareHeader()
@@ -25,11 +25,11 @@ final class NetworkService {
         return headers
     }
     
-    private func prepareParameters(searchTerm: String?) -> [String: String] {
+    private func prepareParameters(searchTerm: String?, n: Int) -> [String: String] {
         var parameters = [String: String]()
         parameters["query"] = searchTerm
-        parameters["page"] = String(1)
-        parameters["per_page"] = String(100)
+        parameters["page"] = String(n)
+        parameters["per_page"] = String(30)
         return parameters
     }
     

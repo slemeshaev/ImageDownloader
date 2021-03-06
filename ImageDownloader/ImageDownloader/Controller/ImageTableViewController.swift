@@ -13,22 +13,35 @@ class ImageTableViewController: UITableViewController {
     
     private var images = [UnsplashPhoto]()
     private var networkDataFetcher = NetworkDataFetcher()
+    private var currentPage: Int = 1
+    private var isLoadingList: Bool = false
     
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchImages(searchText: "Red")
     }
     
     // MARK: - Helpers
     
-    private func fetchImages(searchText: String) {
-        self.networkDataFetcher.fetchImages(searchTerm: searchText) { [weak self] (searchResults) in
+    private func fetchImages(searchTerm: String, numberPage: Int) {
+        self.networkDataFetcher.fetchImages(searchTerm: searchTerm, numberPage: numberPage) { [weak self] (searchResults) in
             guard let fetchedImages = searchResults else { return }
-            print("FetchedImages: \(fetchedImages)")
+            self?.isLoadingList = false
             self?.images = fetchedImages.results
             self?.tableView.reloadData()
+        }
+    }
+    
+    private func loadMoreImages() {
+        currentPage += 1
+        fetchImages(searchTerm: "Blue", numberPage: currentPage)
+    }
+    
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if (((scrollView.contentOffset.y + scrollView.frame.size.height) > scrollView.contentSize.height ) && !isLoadingList) {
+            self.isLoadingList = true
+            self.loadMoreImages()
         }
     }
 
