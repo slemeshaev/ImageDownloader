@@ -26,6 +26,7 @@ class ImageTableViewController: UITableViewController {
     private func fetchImages(searchText: String) {
         self.networkDataFetcher.fetchImages(searchTerm: searchText) { [weak self] (searchResults) in
             guard let fetchedImages = searchResults else { return }
+            print("FetchedImages: \(fetchedImages)")
             self?.images = fetchedImages.results
             self?.tableView.reloadData()
         }
@@ -57,7 +58,7 @@ extension ImageTableViewController {
     }
     
     private func height(for indexPath: IndexPath) -> CGFloat {
-        return 250
+        return 240
     }
     
 }
