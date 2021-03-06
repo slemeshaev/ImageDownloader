@@ -18,7 +18,6 @@
 		669105D225F265A900AEF065 /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669105D125F265A900AEF065 /* NetworkDataFetcher.swift */; };
 		669105D525F265C900AEF065 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669105D425F265C800AEF065 /* API.swift */; };
 		669105D925F268E700AEF065 /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669105D825F268E700AEF065 /* ImageTableViewCell.swift */; };
-		669105DD25F26E0500AEF065 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669105DC25F26E0500AEF065 /* UIImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +34,6 @@
 		669105D125F265A900AEF065 /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
 		669105D425F265C800AEF065 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		669105D825F268E700AEF065 /* ImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
-		669105DC25F26E0500AEF065 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +71,6 @@
 				669105C425F2605D00AEF065 /* Controller */,
 				669105C625F2607800AEF065 /* Service */,
 				669105C525F2606500AEF065 /* Helpers */,
-				669105DB25F26DC000AEF065 /* Extension */,
 			);
 			path = ImageDownloader;
 			sourceTree = "<group>";
@@ -131,14 +128,6 @@
 				669105D825F268E700AEF065 /* ImageTableViewCell.swift */,
 			);
 			path = Cell;
-			sourceTree = "<group>";
-		};
-		669105DB25F26DC000AEF065 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				669105DC25F26E0500AEF065 /* UIImageView.swift */,
-			);
-			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,7 +201,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				669105D225F265A900AEF065 /* NetworkDataFetcher.swift in Sources */,
-				669105DD25F26E0500AEF065 /* UIImageView.swift in Sources */,
 				669105D925F268E700AEF065 /* ImageTableViewCell.swift in Sources */,
 				669105CF25F2658500AEF065 /* NetworkService.swift in Sources */,
 				669105A425F25CEB00AEF065 /* AppDelegate.swift in Sources */,

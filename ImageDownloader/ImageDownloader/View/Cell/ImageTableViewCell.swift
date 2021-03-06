@@ -16,8 +16,9 @@ class ImageTableViewCell: UITableViewCell {
     var unsplashPhoto: UnsplashPhoto! {
         didSet {
             let imageUrl = unsplashPhoto.urls["regular"]
-            guard let url = imageUrl else { return }
-            photoView.loadImage(with: url)
+            guard let urlString = imageUrl else { return }
+            guard let url = URL(string: urlString) else { return }
+            downloadImage(withURL: url, forCell: ImageTableViewCell())
         }
     }
     
@@ -30,13 +31,37 @@ class ImageTableViewCell: UITableViewCell {
     
     // MARK: - Helpers
     
-//    func downloadImage(withURL url: URL, forCell cell: UITableViewCell) {
-//        //
-//    }
+    private func downloadImage(withURL url: URL, forCell cell: UITableViewCell) {
+        var imageCache = [URL: UIImage]()
+        
+        // проверка на существование изображения в кэше
+        if let cachedImage = imageCache[url] {
+            photoView.image = cachedImage
+            return
+        }
+        
+        // извлечь содержимое ссылки
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            // обработка ошибок
+            if let error = error {
+                print("Ошибка загрузки изображения с ошибкой \(error.localizedDescription)")
+            }
+            
+            // данные изображения
+            guard let imageData = data else { return }
+            
+            // установка изображения, используя данные
+            let photoImage = UIImage(data: imageData)
+            
+            // установка ключа и значения для изображения в кэше
+            imageCache[url] = photoImage
+            
+            // установка изображения
+            DispatchQueue.main.async {
+                self.photoView.image = photoImage
+            }
+        }.resume()
+    }
     
-//    func configure(logo: UIImage, city: String) {
-//        self.photoView.image = logo
-//    }
-//
 
 }
