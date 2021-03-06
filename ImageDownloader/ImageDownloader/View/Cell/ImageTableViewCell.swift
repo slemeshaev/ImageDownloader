@@ -12,6 +12,7 @@ class ImageTableViewCell: UITableViewCell {
     // MARK: - Properties
     
     @IBOutlet weak var photoView: UIImageView!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     var unsplashPhoto: UnsplashPhoto! {
         didSet {
@@ -20,13 +21,6 @@ class ImageTableViewCell: UITableViewCell {
             guard let url = URL(string: urlString) else { return }
             downloadImage(withURL: url, forCell: ImageTableViewCell())
         }
-    }
-    
-    // MARK: - Lifecycle
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        self.photoView.image = nil
     }
     
     // MARK: - Helpers
@@ -40,6 +34,7 @@ class ImageTableViewCell: UITableViewCell {
             return
         }
         
+        self.spinner.startAnimating()
         // извлечь содержимое ссылки
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             // обработка ошибок
@@ -58,6 +53,8 @@ class ImageTableViewCell: UITableViewCell {
             
             // установка изображения
             DispatchQueue.main.async {
+                self.spinner.stopAnimating()
+                self.spinner.isHidden = true
                 self.photoView.image = photoImage
             }
         }.resume()
