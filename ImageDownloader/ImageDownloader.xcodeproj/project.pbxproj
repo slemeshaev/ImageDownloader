@@ -18,7 +18,7 @@
 		669105D225F265A900AEF065 /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669105D125F265A900AEF065 /* NetworkDataFetcher.swift */; };
 		669105D525F265C900AEF065 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669105D425F265C800AEF065 /* API.swift */; };
 		669105D925F268E700AEF065 /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669105D825F268E700AEF065 /* ImageTableViewCell.swift */; };
-		6691060725F338C900AEF065 /* Screenshot_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6691060625F338C900AEF065 /* Screenshot_1.png */; };
+		6691060D25F33B0600AEF065 /* Screenshot_01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6691060C25F33B0600AEF065 /* Screenshot_01.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +35,7 @@
 		669105D125F265A900AEF065 /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
 		669105D425F265C800AEF065 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		669105D825F268E700AEF065 /* ImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
-		6691060625F338C900AEF065 /* Screenshot_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screenshot_1.png; sourceTree = "<group>"; };
+		6691060C25F33B0600AEF065 /* Screenshot_01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Screenshot_01.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,7 +136,7 @@
 		6691060525F338B900AEF065 /* Screenshots */ = {
 			isa = PBXGroup;
 			children = (
-				6691060625F338C900AEF065 /* Screenshot_1.png */,
+				6691060C25F33B0600AEF065 /* Screenshot_01.jpg */,
 			);
 			path = Screenshots;
 			sourceTree = "<group>";
@@ -199,8 +199,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				669105B025F25CED00AEF065 /* LaunchScreen.storyboard in Resources */,
-				6691060725F338C900AEF065 /* Screenshot_1.png in Resources */,
 				669105AD25F25CED00AEF065 /* Assets.xcassets in Resources */,
+				6691060D25F33B0600AEF065 /* Screenshot_01.jpg in Resources */,
 				669105AB25F25CEB00AEF065 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
